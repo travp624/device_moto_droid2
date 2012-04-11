@@ -22,7 +22,7 @@
 #
 
 # Device overlay and prebuilt directories
-DEVICE_PREBUILT := device/motorola/droid2/prebuilt
+DEVICE_PREBUILT := device/moto/droid2/prebuilt
 
 # Camera
 PRODUCT_PACKAGES := \
@@ -30,8 +30,8 @@ PRODUCT_PACKAGES := \
 
 # Audio + Bluetooth
 PRODUCT_COPY_FILES += \
-	device/motorola/droid2/audio/libaudio.so:/system/lib/libaudio.so \
-	device/motorola/droid2/audio/liba2dp.so:/system/lib/liba2dp.so
+	device/moto/droid2/audio/libaudio.so:/system/lib/libaudio.so \
+	device/moto/droid2/audio/liba2dp.so:/system/lib/liba2dp.so
 
 PRODUCT_PACKAGES += \
 	audio.primary.omap3 \
@@ -51,7 +51,7 @@ PRODUCT_COPY_FILES += \
 
 #Kernel
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/motorola/droid2/kernel
+LOCAL_KERNEL := device/moto/droid2/kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -61,7 +61,7 @@ PRODUCT_COPY_FILES += \
 
 # copy all kernel modules under the "modules" directory to system/lib/modules
 PRODUCT_COPY_FILES += $(shell \
-  find device/motorola/droid2/modules -name '*.ko' \
+  find device/moto/droid2/modules -name '*.ko' \
   | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
   | tr '\n' ' ')
 
@@ -74,7 +74,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 # Inherit from droid2 device
-$(call inherit-product, device/motorola/droid2/device.mk)
+$(call inherit-product, device/moto/droid2/device.mk)
 
 PRODUCT_NAME := full_droid2
 PRODUCT_DEVICE := droid2

@@ -19,11 +19,11 @@
 #
 # Everything in this directory will become public
 
-DEVICE_PACKAGE_OVERLAYS := device/motorola/droid2/overlay
+DEVICE_PACKAGE_OVERLAYS := device/moto/droid2/overlay
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES := \
 	frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml 
 
-$(call inherit-product, device/motorola/omap34com/device.mk)
-$(call inherit-product-if-exists, vendor/motorola/droid2/droid2-vendor.mk)
+$(call inherit-product, device/moto/omap34com/device.mk)
+$(call inherit-product-if-exists, vendor/moto/droid2/droid2-vendor.mk)
