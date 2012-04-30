@@ -39,7 +39,7 @@ BOARD_OVERLAY_BASED_CAMERA_HAL := true
 
 # Recovery
 TARGET_PREBUILT_RECOVERY_KERNEL := device/moto/droid2/kernel
-BOARD_MKE2FS := device/moto/droid2/releaseutils/mke2fs
+BOARD_MKE2FS := device/moto/omap34com/releaseutils/mke2fs
 
 TARGET_PROVIDES_INIT_RC := true
 
